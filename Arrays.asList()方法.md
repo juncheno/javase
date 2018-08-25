@@ -25,11 +25,18 @@ Exception in thread "main" java.lang.UnsupportedOperationException
 
 自己看看源代码分析吧,下面是`AbstractList#add`方法
 
-![AbstractList](C:\Users\ADMINI~1\AppData\Local\Temp\1535160808453.png)
+```java
+    public boolean add(E e) {
+        add(size(), e);
+        return true;
+    }
 
 
+```java
+    public void add(int index, E element) {
+        throw new UnsupportedOperationException();
+    }
 
-![AbstractList](C:\Users\ADMINI~1\AppData\Local\Temp\1535160897712.png)
 
 原来这个默认``AbstractList`add方法没有实现的话，会抛出不支持这种操作的异常，你的 `Arrays`内部类`ArrayList` 默认没有实现
 
