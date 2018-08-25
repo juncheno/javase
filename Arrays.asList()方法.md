@@ -21,7 +21,7 @@ Exception in thread "main" java.lang.UnsupportedOperationException
 
 这个异常估计大家比较熟悉，debug代码到下面方法时候尴尬
 
-![不知道为啥](C:\Users\ADMINI~1\AppData\Local\Temp\1535161326922.png)
+debug找不到源码，根据提示把项目导入也没生效
 
 自己看看源代码分析吧,下面是`AbstractList#add`方法
 
@@ -32,7 +32,7 @@ Exception in thread "main" java.lang.UnsupportedOperationException
     }
 
 
-```java
+
     public void add(int index, E element) {
         throw new UnsupportedOperationException();
     }
